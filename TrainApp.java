@@ -3,14 +3,9 @@ import java.util.List;
 
 public class TrainApp {
     public static void main(String[] args) {
-
         System.out.println("=== Train Consist Management App ===");
 
-        // UC2: Passenger bogies list
         List<String> passengerBogies = new ArrayList<>();
-
-        // Initial state
-        System.out.println("Initial Bogie Count: " + passengerBogies.size());
 
         // Add bogies
         passengerBogies.add("Sleeper");
@@ -19,7 +14,7 @@ public class TrainApp {
 
         System.out.println("After Adding Bogies: " + passengerBogies);
 
-        // Remove a bogie
+        // Remove one bogie
         passengerBogies.remove("AC Chair");
 
         System.out.println("After Removing AC Chair: " + passengerBogies);
