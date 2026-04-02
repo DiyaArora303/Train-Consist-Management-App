@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.LinkedList;
+import java.util.LinkedHashSet;
 
 public class TrainApp {
     public static void main(String[] args) {
@@ -31,27 +32,34 @@ public class TrainApp {
         System.out.println("Unique Bogie IDs: " + bogieIDs);
 
         // ================= UC4 =================
-
         LinkedList<String> trainConsist = new LinkedList<>();
-
-        // Add bogies
         trainConsist.add("Engine");
         trainConsist.add("Sleeper");
         trainConsist.add("AC");
         trainConsist.add("Cargo");
         trainConsist.add("Guard");
 
-        System.out.println("Initial Train Consist: " + trainConsist);
-
-        // Insert Pantry Car at position 2
         trainConsist.add(2, "Pantry");
 
-        System.out.println("After Adding Pantry: " + trainConsist);
-
-        // Remove first and last
         trainConsist.removeFirst();
         trainConsist.removeLast();
 
-        System.out.println("Final Train Consist: " + trainConsist);
+        System.out.println("Ordered Train Consist: " + trainConsist);
+
+        // ================= UC5 =================
+
+        LinkedHashSet<String> formation = new LinkedHashSet<>();
+
+        // Add bogies
+        formation.add("Engine");
+        formation.add("Sleeper");
+        formation.add("Cargo");
+        formation.add("Guard");
+
+        // Attempt duplicate
+        formation.add("Sleeper");
+
+        // Display formation
+        System.out.println("Final Train Formation (Ordered & Unique): " + formation);
     }
 }
